@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Radio } from "antd";
-import { RiDeleteBack2Line } from "react-icons/ri";
+import BackSpaceIcon from "./icons/BackSpaceIcon";
+import "./calculator.css";
 
 const Calculator = () => {
   const [calc, setCalc] = useState("");
@@ -48,11 +49,9 @@ const Calculator = () => {
     }
   };
   return (
-    <div className="bg-[#F9FAFB] border-[2px] border-[#E4E7EC] rounded-[5px] p-[8px] flex flex-col gap-[16px] w-[35%] mx-auto">
-      <span className="rounded-[5px] border-[2px] border-[#D0D5DD] bg-[#FCFCFD] px-[16px] min-h-[35px] flex justify-end items-center text-[#667085] text-[25px] font-[500] text-right">
-        {calc}
-      </span>
-      <div className="grid grid-cols-7 gap-[5px] items-stretch justify-center">
+    <div className="container">
+      <span className="screen">{calc}</span>
+      <div className="btn-container">
         <Radio.Group
           options={[
             { label: "Rad", value: "Rad" },
@@ -98,7 +97,7 @@ const Calculator = () => {
         <Button onClick={() => handleButtonClick("0")}>0</Button>
         <Button onClick={() => handleButtonClick(".")}>.</Button>
         <Button
-          icon={<RiDeleteBack2Line className="text-[#066FA9]" />}
+          icon={<BackSpaceIcon className="backspaceIcon" />}
           onClick={handleDelete}
           className="!w-full"
         />

@@ -1,12 +1,12 @@
 {
-  "name": "react-calculator",
+  "name": "react-advanced-calculator",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "npm build:esm && npm build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build"
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "antd": "^5.12.5",
-    "react-icons": "^4.12.0"
+    "tslib": "^2.6.2"
   },
   "peerDependencies": {
     "react": ">=16"
