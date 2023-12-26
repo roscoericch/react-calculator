@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Radio } from "antd";
 import BackSpaceIcon from "./icons/BackSpaceIcon";
-import "./calculator.css";
+import "../components/calculator.css";
 
 const Calculator = () => {
   const [calc, setCalc] = useState("");
