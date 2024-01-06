@@ -6,8 +6,9 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack-dev-server --open",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -36,8 +37,7 @@
   },
   "dependencies": {
     "antd": "^5.12.5",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "react-icons": "^4.12.0"
   },
   "peerDependencies": {
     "react": ">=16"
